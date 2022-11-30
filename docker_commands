@@ -1,0 +1,17 @@
+DONE -Update dockerfile to set sshd_config to x11usehost = no on both gateway and test3
+	-use /etc/ssh/sshd_config as a template, and COPY modified file into con	tainers /etc/ssh/sshd_config AFTER the installation of ssh in dockerfile
+	
+DONE -For easier ssh-ing into containers:
+	use /root/.bashrc file as template to write alias for the ssh command:
+	ssh -X -i /root/.ssh/(rsakey) root@(ipcontainer) -p 22
+vim commands:
+shift+g = bottom of file 
+
+alias example:
+alias 'meow'="echo borkbork"
+
+source after changing .bashrc = '. .bashrc'
+
+login test1:latest:
+xhost +local:docker
+sudo docker run -e DISPLAY=$DISPLAY --net=host --privileged -v /tmp/.X11-unix:/tmp/.X11-unix -it test1:latest  
