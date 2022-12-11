@@ -117,6 +117,5 @@ if ! shopt -oq posix; then
 fi
 
 export QSYS_ROOTDIR="/home/jackie/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
-alias 'meow'="echo borkbork"
 alias 'ssh-gateway'="ssh -X -i /root/.ssh/id_rsa root@172.17.0.2 -p 22"
-alias 'ssh-resource'="ssh -X -i /root/.ssh/id_rsa2 root@172.17.0.2 -p 22"
+alias 'ssh-resource'="ssh -X -i /root/.ssh/id_rsa2 root@172.17.0.3 -p 22"
